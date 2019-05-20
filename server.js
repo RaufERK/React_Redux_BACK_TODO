@@ -5,7 +5,7 @@ const path = require('path');
 
 const app = express();
 
-const items1 = require('./routes/api/items');
+const items = require('./routes/api/items');
 
 // BodyParser MiddleWare
 app.use(bodyParser.json());
@@ -20,7 +20,7 @@ mongoose
     .catch(err => console.log(err));
 
 //Use routes
-app.use('/api/items', items1);
+app.use('/api/items', items);
 
 //Sever static assets if in production
 if (process.env.NODE_ENV === 'production') {
